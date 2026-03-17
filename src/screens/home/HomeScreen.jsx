@@ -1,11 +1,11 @@
 import React from 'react';
 import { View } from 'react-native';
-import Greetings from '@/components/Greetings';
+import Home from '@/components/Home/Index';
 
 export default function HomeScreen() {
   return (
     <View>
-      <Greetings />
+      <Home />
     </View>
   );
 }
