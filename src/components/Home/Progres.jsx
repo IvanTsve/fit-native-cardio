@@ -10,9 +10,9 @@ export default function Progress() {
     const [minutes, setMinutes] = useState(0);
 
     useEffect(() => {
-        setSteps(0);
-        setCalories(0);
-        setMinutes(0);
+        setSteps(10);
+        setCalories(20);
+        setMinutes(30);
     }, []);
     return (
         <View style={styles.container}>
@@ -21,17 +21,17 @@ export default function Progress() {
                 <View style={styles.progressItem}>
                     <ProgressCircle percentage={10} />
                     <Text>Steps</Text>
-                    <Text>{steps}</Text>
+                    <Text style={styles.progressValue}>{steps}</Text>
                 </View>
                 <View style={styles.progressItem}>
                     <ProgressCircle percentage={20} />
                     <Text>Calories</Text>
-                    <Text>{calories}</Text>
+                    <Text style={styles.progressValue}>{calories}</Text>
                 </View>
                 <View style={styles.progressItem}>
                     <ProgressCircle percentage={30} />
                     <Text>Minutes</Text>
-                    <Text>{minutes}</Text>
+                    <Text style={styles.progressValue}>{minutes}</Text>
                 </View>
             </View>
         </View>
@@ -59,5 +59,12 @@ const styles = StyleSheet.create({
        width: '33%',
        alignItems: 'center',
        justifyContent: 'center',
+    },
+    progressValue: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        color: '#000',
+        textAlign: 'center',
+        marginTop: 10,
     }
 });
