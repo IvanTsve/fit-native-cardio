@@ -5,9 +5,15 @@ import { StyleSheet } from 'react-native';
 
 export const commonStyles = StyleSheet.create({
   title: {
-    fontSize: 45,
+    fontSize: 30,
     fontWeight: 'bold',
-    color: '#1d4ed8',
+    color: 'white',
+    textAlign: 'center'
+  },
+  subtitle: {
+    fontSize: 16,
+    // fontWeight: 'bold',
+    color: 'white',
     textAlign: 'center'
   },
   container: {
