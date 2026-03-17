@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { useState, useEffect } from 'react';
 import { commonStyles } from '@/styles/Common';
+import ProgressCircle from '@/components/Common/ProgressCircle';
 
 export default function Progress() {
     const [steps, setSteps] = useState(0);
@@ -17,15 +18,18 @@ export default function Progress() {
         <View style={styles.container}>
             <Text style={styles.progressTitle}>Today's Progress</Text>
             <View style={commonStyles.progressContainer}>
-                <View>
+                <View style={styles.progressItem}>
+                    <ProgressCircle percentage={10} />
                     <Text>Steps</Text>
                     <Text>{steps}</Text>
                 </View>
-                <View>
+                <View style={styles.progressItem}>
+                    <ProgressCircle percentage={20} />
                     <Text>Calories</Text>
                     <Text>{calories}</Text>
                 </View>
-                <View>
+                <View style={styles.progressItem}>
+                    <ProgressCircle percentage={30} />
                     <Text>Minutes</Text>
                     <Text>{minutes}</Text>
                 </View>
@@ -50,5 +54,10 @@ const styles = StyleSheet.create({
         color: '#000',
         textAlign: 'left',
         marginBottom: 10,
+    },
+    progressItem: {
+       width: '33%',
+       alignItems: 'center',
+       justifyContent: 'center',
     }
 });
