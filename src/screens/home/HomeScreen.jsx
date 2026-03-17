@@ -1,6 +1,11 @@
 import React from 'react';
-import DummyScreen from '@/components/DummyScreen';
+import { View } from 'react-native';
+import Greetings from '@/components/Greetings';
 
 export default function HomeScreen() {
-  return <DummyScreen name="Home" />;
+  return (
+    <View>
+      <Greetings />
+    </View>
+  );
 }
