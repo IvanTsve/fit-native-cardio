@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         flex: 1,
-        padding: 25,
+        padding: 20,
         borderRadius: 15,
         boxShadow: '0 0 10px 0 rgba(0, 0, 0, 0.1)',
         gap: 15,
