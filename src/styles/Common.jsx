@@ -16,6 +16,13 @@ export const commonStyles = StyleSheet.create({
     color: 'white',
     textAlign: 'center'
   },
+  sectionTitle: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#000',
+    textAlign: 'left',
+    marginBottom: 10,
+  },
   container: {
     flex: 1,
     // backgroundColor: '#fff',

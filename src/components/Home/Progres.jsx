@@ -16,7 +16,7 @@ export default function Progress() {
     }, []);
     return (
         <View style={styles.container}>
-            <Text style={styles.progressTitle}>Today's Progress</Text>
+            <Text style={commonStyles.sectionTitle}>Today's Progress</Text>
             <View style={commonStyles.progressContainer}>
                 <View style={styles.progressItem}>
                     <ProgressCircle percentage={10} />
