@@ -37,7 +37,7 @@ export const commonStyles = StyleSheet.create({
     backgroundColor: '#12C660',
     paddingHorizontal: 20,
     paddingVertical: 15,
-    borderRadius: 20,
+    borderRadius: 15,
   },
   buttonText: {
     color: 'white',
