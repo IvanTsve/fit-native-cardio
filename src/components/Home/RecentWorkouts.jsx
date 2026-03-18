@@ -13,7 +13,7 @@ export default function RecentWorkouts() {
             steps: 1000,
             image: 'https://via.placeholder.com/150',
             date: '2026-03-18',
-            time: '10:00',
+            time: '10:00:00',
             distance: 1000,
         },
         {
@@ -24,7 +24,7 @@ export default function RecentWorkouts() {
             steps: 1500,
             image: 'https://via.placeholder.com/150',
             date: '2026-03-18',
-            time: '10:00',
+            time: '16:00:00',
             distance: 1500,
 
         },
@@ -36,7 +36,7 @@ export default function RecentWorkouts() {
             steps: 2000,
             image: 'https://via.placeholder.com/150',
             date: '2026-03-18',
-            time: '10:00',
+            time: '21:34:00',
             distance: 2000,
         },
         {
@@ -47,7 +47,7 @@ export default function RecentWorkouts() {
             steps: 2500,
             image: 'https://via.placeholder.com/150',
             date: '2026-03-18',
-            time: '10:00',
+            time: '09:07:00',
             distance: 2500,
         },
     ];
