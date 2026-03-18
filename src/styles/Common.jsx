@@ -33,4 +33,16 @@ export const commonStyles = StyleSheet.create({
     padding: 10,
     borderRadius: 10,
   },
+  buttonContainer: {
+    backgroundColor: '#12C660',
+    paddingHorizontal: 20,
+    paddingVertical: 15,
+    borderRadius: 30,
+  },
+  buttonText: {
+    color: 'white',
+    textAlign: 'center',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
 });
