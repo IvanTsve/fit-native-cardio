@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
         padding: 15,
         paddingTop: 20,
         borderRadius: 10,
-        marginHorizontal: 30,
+        // marginHorizontal: 30,
         boxShadow: '0 0 10px 0 rgba(0, 0, 0, 0.1)',
         marginTop: -15
     },
