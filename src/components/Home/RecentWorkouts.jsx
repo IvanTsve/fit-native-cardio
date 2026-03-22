@@ -15,7 +15,7 @@ export default function RecentWorkouts() {
                 </TouchableOpacity>
             </View>
             <View style={{gap: 25, marginBottom: 20}}>
-               {mockWorkouts.map((workout) => (
+               {mockWorkouts.slice(-3).map((workout) => (
                 <SingleWorkout key={workout.id} workout={workout} />
                ))}
             </View>
