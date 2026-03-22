@@ -1,6 +1,11 @@
 import React from 'react';
-import DummyScreen from '@/components/DummyScreen';
+import { View } from 'react-native';
+import Index from '@/components/Workouts/Index';
 
 export default function WorkoutsScreen() {
-  return <DummyScreen name="Workouts" />;
+  return (
+    <View>
+      <Index />
+    </View>
+  );
 }
