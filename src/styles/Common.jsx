@@ -4,6 +4,10 @@ import { StyleSheet } from 'react-native';
 
 
 export const commonStyles = StyleSheet.create({
+  mainContainer: {
+    marginHorizontal: 30,
+    gap: 30,
+  },
   title: {
     fontSize: 30,
     fontWeight: 'bold',

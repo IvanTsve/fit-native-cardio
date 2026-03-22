@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <ScrollView>
       <Greetings />
-      <View style={{ marginHorizontal: 30, gap: 30 }}>
+      <View style={commonStyles.mainContainer}>
         <Progress />
         <WorkoutStats />
         <MainButton
