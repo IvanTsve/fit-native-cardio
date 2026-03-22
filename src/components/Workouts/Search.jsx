@@ -12,8 +12,8 @@ export default function Search({onChangeText}) {
                 placeholder="Search workouts"
                 placeholderTextColor="#757575"
                 style={styles.input}
-                // onFocus={() => setFocused(true)}
-                // onBlur={() => setFocused(false)}
+                onFocus={() => setFocused(true)}
+                onBlur={() => setFocused(false)}
                 onChangeText={onChangeText}
             />
 
