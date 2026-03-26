@@ -1,6 +1,9 @@
 import React from 'react';
-import DummyScreen from '@/components/DummyScreen';
+import Index from '@/components/Analytics/Index';
+
 
 export default function AnalyticsScreen() {
-  return <DummyScreen name="Analytics" />;
+  return (
+      <Index />
+  );
 }
