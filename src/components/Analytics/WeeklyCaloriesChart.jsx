@@ -10,9 +10,11 @@ dayjs.extend(isoWeek);
 
 const BAR_COLOR = '#12C660';
 const EMPTY_COLOR = '#E5E7EB';
-const DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
-function buildChartData() {
+const WEEK_LABELS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+const MONTH_LABELS = ['W1', 'W2', 'W3', 'W4'];
+
+function buildWeekData() {
     const startOfWeek = dayjs().startOf('isoWeek');
     const totals = Array(7).fill(0);
 
@@ -22,25 +24,49 @@ function buildChartData() {
         if (diff >= 0 && diff < 7) totals[diff] += calories;
     });
 
-    return DAYS.map((label, i) => ({
+    return WEEK_LABELS.map((label, i) => ({
         value: totals[i],
         label,
         frontColor: totals[i] > 0 ? BAR_COLOR : EMPTY_COLOR,
     }));
 }
 
-export default function WeeklyCaloriesChart() {
-    const data = buildChartData();
+function buildMonthData() {
+    const now = dayjs();
+    const month = now.month();
+    const year = now.year();
+    const totals = Array(4).fill(0);
+
+    mockWorkouts.forEach(({ date, calories }) => {
+        if (!date) return;
+        const d = dayjs(date);
+        if (d.month() !== month || d.year() !== year) return;
+        const weekIdx = Math.min(Math.floor((d.date() - 1) / 7), 3);
+        totals[weekIdx] += calories;
+    });
+
+    return MONTH_LABELS.map((label, i) => ({
+        value: totals[i],
+        label,
+        frontColor: totals[i] > 0 ? BAR_COLOR : EMPTY_COLOR,
+    }));
+}
+
+export default function WeeklyCaloriesChart({ range = 'week' }) {
+    const isMonth = range === 'month';
+    const data = isMonth ? buildMonthData() : buildWeekData();
     const maxVal = Math.max(...data.map(d => d.value));
     const roundedMax = Math.ceil(maxVal / 200) * 200 || 400;
 
     return (
         <View style={styles.card}>
-            <Text style={commonStyles.sectionTitle}>Weekly Calories</Text>
+            <Text style={commonStyles.sectionTitle}>
+                {isMonth ? 'Monthly Calories' : 'Weekly Calories'}
+            </Text>
             <BarChart
                 data={data}
-                barWidth={32}
-                spacing={14}
+                barWidth={isMonth ? 55 : 32}
+                spacing={isMonth ? 20 : 14}
                 roundedTop
                 hideRules
                 xAxisThickness={1}

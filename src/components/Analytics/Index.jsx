@@ -40,8 +40,8 @@ export default function Index() {
                     ))}
                 </View>
                 <WorkoutStats range={range} />
-                <WeeklyCaloriesChart />
-                <WeeklyDurationChart />
+                <WeeklyCaloriesChart range={range} />
+                <WeeklyDurationChart range={range} />
             </View>
         </ScrollView>
     );
