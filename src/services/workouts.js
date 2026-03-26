@@ -6,7 +6,7 @@ const mockWorkouts = [
         calories: 300,
         steps: 1000,
         image: 'https://via.placeholder.com/150',
-        date: '2026-03-18',
+        date: '2026-03-23',
         time: '10:00:00',
         distance: 1000,
     },
@@ -17,10 +17,9 @@ const mockWorkouts = [
         calories: 400,
         steps: 1500,
         image: 'https://via.placeholder.com/150',
-        date: '2026-03-18',
+        date: '2026-03-24',
         time: '16:00:00',
         distance: 1500,
-
     },
     {
         id: 3,
@@ -29,7 +28,7 @@ const mockWorkouts = [
         calories: 500,
         steps: 2000,
         image: 'https://via.placeholder.com/150',
-        date: '2026-03-18',
+        date: '2026-03-25',
         time: '21:34:00',
         distance: 2000,
     },
@@ -40,7 +39,7 @@ const mockWorkouts = [
         calories: 600,
         steps: 2500,
         image: 'https://via.placeholder.com/150',
-        date: '2026-03-18',
+        date: '2026-03-26',
         time: '09:07:00',
         distance: 2500,
     },
@@ -51,7 +50,7 @@ const mockWorkouts = [
         calories: 700,
         steps: 3000,
         image: 'https://via.placeholder.com/150',
-        date: '2026-03-18',
+        date: '2026-03-24',
         time: '12:00:00',
         distance: 3000,
     },
@@ -62,6 +61,9 @@ const mockWorkouts = [
         calories: 800,
         steps: 3500,
         image: 'https://via.placeholder.com/150',
+        date: '2026-03-26',
+        time: '18:00:00',
+        distance: 3500,
     },
     {
         id: 7,
@@ -70,6 +72,9 @@ const mockWorkouts = [
         calories: 900,
         steps: 4000,
         image: 'https://via.placeholder.com/150',
+        date: '2026-03-28',
+        time: '08:30:00',
+        distance: 4000,
     }
 ];
 
