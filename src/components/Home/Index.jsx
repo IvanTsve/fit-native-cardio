@@ -2,7 +2,7 @@ import React from 'react';
 import { View, ScrollView } from 'react-native';
 import Greetings from '@/components/Home/Greetings';
 import Progress from '@/components/Home/Progres';
-import WorkoutStats from '@/components/Home/WorkoutStats';
+import WorkoutStats from '@/components/Common/WorkoutStats';
 import MainButton from '@/components/Common/MainButton';
 import { commonStyles } from '@/styles/Common';
 import RecentWorkouts from '@/components/Home/RecentWorkouts';
