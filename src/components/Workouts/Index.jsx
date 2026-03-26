@@ -12,6 +12,14 @@ export default function Index() {
         console.log(text);
     };
 
+    const handleEditWorkout = (id) => {
+        console.log(id);
+    };
+
+    const handleDeleteWorkout = (id) => {
+        console.log(id);
+    };
+
     return (
         <ScrollView>
             <View style={commonStyles.mainContainer}>
@@ -19,7 +27,7 @@ export default function Index() {
                 <Search onChangeText={handleSearch} />
                 <TotalWorkouts workouts={mockWorkouts} />
                 {mockWorkouts.map((workout) => (
-                    <SingleWorkout key={workout.id} workout={workout} />
+                    <SingleWorkout showDelete={true} key={workout.id} workout={workout} handleEditWorkout={handleEditWorkout} handleDeleteWorkout={handleDeleteWorkout} />
                 ))}
             </View>
         </ScrollView>

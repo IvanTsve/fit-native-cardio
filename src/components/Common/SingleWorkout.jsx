@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { commonStyles } from '@/styles/Common';
 import dayjs from 'dayjs';
@@ -7,7 +7,7 @@ import customParseFormat from 'dayjs/plugin/customParseFormat';
 
 dayjs.extend(customParseFormat);
 
-export default function SingleWorkout({ workout }) {
+export default function SingleWorkout({ workout, showDelete = false, handleEditWorkout, handleDeleteWorkout }) {
     const formattedDate = dayjs(workout.date).format('DD/MM/YYYY');
     const formattedTime = dayjs(workout.time, 'HH:mm:ss').format('hh:mm A');
     const distanceKm =
@@ -25,8 +25,20 @@ export default function SingleWorkout({ workout }) {
         <View style={styles.container}>
             <Text style={commonStyles.sectionTitle}>{workout.name}</Text>
             <View style={styles.titleRow}>
-                <Ionicons name="calendar-outline" size={22} color="#12C660" style={styles.calendarIcon} />
-                <Text>{formattedDate} - {formattedTime}</Text>
+                <View style={styles.titleRow}>
+                    <Ionicons name="calendar-outline" size={22} color="#12C660" style={styles.calendarIcon} />
+                    <Text>{formattedDate} - {formattedTime}</Text>
+                </View>
+                {showDelete && (
+                    <View style={styles.actionsRow}>
+                        <TouchableOpacity style={styles.iconButton} accessibilityLabel="Edit workout" onPress={() => handleEditWorkout(workout.id)}>
+                            <Ionicons name="create-outline" size={22} color="#12C660" />
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.iconButton} accessibilityLabel="Delete workout" onPress={() => handleDeleteWorkout(workout.id)}>
+                            <Ionicons name="trash-outline" size={22} color="#12C660" />
+                        </TouchableOpacity>
+                    </View>
+                )}
             </View>
             <View style={styles.workoutValuesContainer}>
                 <View style={styles.subContainer}>
@@ -71,8 +83,17 @@ const styles = StyleSheet.create({
     titleRow: {
         flexDirection: 'row',
         alignItems: 'baseline',
+        justifyContent: 'space-between',
         marginBottom: 15,
 
+    },
+    actionsRow: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 4,
+    },
+    iconButton: {
+        padding: 4,
     },
     calendarIcon: {
         marginRight: 8,
