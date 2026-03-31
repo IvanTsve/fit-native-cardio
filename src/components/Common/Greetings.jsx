@@ -24,7 +24,7 @@ export default function Greetings({ title, subtitle, showAvatar = false }) {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#12C660',
-    paddingTop: 20,
+    paddingTop: 50,
     paddingBottom: 20,
     paddingLeft: 30,
     paddingRight: 30,
