@@ -1,6 +1,6 @@
 import React from 'react';
-import DummyScreen from '@/components/DummyScreen';
+import Index from '@/components/Profile/Index';
 
 export default function ProfileScreen() {
-  return <DummyScreen name="Profile" />;
+  return <Index />;
 }
