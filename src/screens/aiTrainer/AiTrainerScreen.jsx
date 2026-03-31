@@ -1,6 +1,6 @@
 import React from 'react';
-import DummyScreen from '@/components/DummyScreen';
+import AiTrainer from '@/components/AiTrainer/Index';
 
 export default function AiTrainerScreen() {
-  return <DummyScreen name="AiTrainer" />;
+  return <AiTrainer />;
 }
