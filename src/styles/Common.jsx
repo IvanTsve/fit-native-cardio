@@ -1,7 +1,4 @@
-
-
 import { StyleSheet } from 'react-native';
-
 
 export const commonStyles = StyleSheet.create({
   mainContainer: {
@@ -12,13 +9,12 @@ export const commonStyles = StyleSheet.create({
     fontSize: 30,
     fontWeight: 'bold',
     color: 'white',
-    textAlign: 'center'
+    textAlign: 'center',
   },
   subtitle: {
     fontSize: 16,
-    // fontWeight: 'bold',
     color: 'white',
-    textAlign: 'center'
+    textAlign: 'center',
   },
   sectionTitle: {
     fontSize: 16,
@@ -29,12 +25,10 @@ export const commonStyles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    // backgroundColor: '#fff',
-    alignItems: 'stretch',        // center children horizontally
+    alignItems: 'stretch',
     justifyContent: 'flex-start',
     flexDirection: 'column',
     width: '100%',
-
   },
   progressContainer: {
     flexDirection: 'row',
