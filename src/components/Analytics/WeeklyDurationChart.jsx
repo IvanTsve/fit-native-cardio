@@ -3,8 +3,9 @@ import { View, Text, StyleSheet } from 'react-native';
 import { BarChart } from 'react-native-gifted-charts';
 import dayjs from 'dayjs';
 import isoWeek from 'dayjs/plugin/isoWeek';
-import mockWorkouts from '@/services/workouts';
+import { getWorkouts } from '@/services/workouts';
 import { commonStyles } from '@/styles/Common';
+import { useState, useEffect } from 'react';
 
 dayjs.extend(isoWeek);
 
@@ -18,11 +19,11 @@ function parseDurationMinutes(durationStr) {
     return parseInt(durationStr, 10) || 0;
 }
 
-function buildWeekData() {
+function buildWeekData(workouts) {
     const startOfWeek = dayjs().startOf('isoWeek');
     const totals = Array(7).fill(0);
 
-    mockWorkouts.forEach(({ date, duration }) => {
+    workouts.forEach(({ date, duration }) => {
         if (!date) return;
         const diff = dayjs(date).diff(startOfWeek, 'day');
         if (diff >= 0 && diff < 7) totals[diff] += parseDurationMinutes(duration);
@@ -35,13 +36,13 @@ function buildWeekData() {
     }));
 }
 
-function buildMonthData() {
+function buildMonthData(workouts) {
     const now = dayjs();
     const month = now.month();
     const year = now.year();
     const totals = Array(4).fill(0);
 
-    mockWorkouts.forEach(({ date, duration }) => {
+    workouts.forEach(({ date, duration }) => {
         if (!date) return;
         const d = dayjs(date);
         if (d.month() !== month || d.year() !== year) return;
@@ -57,8 +58,15 @@ function buildMonthData() {
 }
 
 export default function WeeklyDurationChart({ range = 'week' }) {
+    const [workouts, setWorkouts] = useState([]);
+    useEffect(() => {
+        getWorkouts().then((data) => {
+            setWorkouts(data);
+        });
+    }, []);
+
     const isMonth = range === 'month';
-    const data = isMonth ? buildMonthData() : buildWeekData();
+    const data = isMonth ? buildMonthData(workouts) : buildWeekData(workouts);
     const maxVal = Math.max(...data.map(d => d.value));
     const roundedMax = Math.ceil(maxVal / 60) * 60 || 120;
 
