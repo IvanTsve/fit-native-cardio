@@ -5,8 +5,7 @@ import RootNavigator from './src/navigation/RootNavigator';
 import  * as CommonStyles from './src/styles/Common';
 
 import { useEffect, useState } from 'react'
-import { StyleSheet, View, FlatList, Text } from 'react-native'
-import { supabase } from './lib/supabase'
+import { supabase } from '@/lib/supabase'
 
 
 global.commonStyles = CommonStyles.commonStyles;
