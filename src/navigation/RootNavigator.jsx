@@ -17,7 +17,14 @@ export default function RootNavigator() {
       {user ? (
         <Stack.Navigator screenOptions={{ headerShown: false }}>
           <Stack.Screen name="MainTabs" component={MainTabs} />
-          <Stack.Screen name="CustomWorkout" component={CustomWorkoutScreen} />
+          <Stack.Screen
+            name="CustomWorkout"
+            component={CustomWorkoutScreen}
+            options={{
+              headerShown: true,
+              title: 'Add Workout Stats',
+            }}
+          />
         </Stack.Navigator>
       ) : (
         <AuthNavigator />
