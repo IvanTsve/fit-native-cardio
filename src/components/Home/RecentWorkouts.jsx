@@ -2,9 +2,16 @@ import React from 'react';
 import { View, Text, TouchableOpacity,StyleSheet } from 'react-native';
 import { commonStyles } from '@/styles/Common';
 import SingleWorkout from '@/components/Common/SingleWorkout';
-import mockWorkouts from '@/services/workouts';
+import { getWorkouts } from '@/services/workouts';
+import { useState, useEffect } from 'react';
 export default function RecentWorkouts() {
     
+    const [workouts, setWorkouts] = useState([]);
+    useEffect(() => {
+        getWorkouts().then((data) => {
+            setWorkouts(data);
+        });
+    }, []);
 
     return (
         <View>
@@ -15,7 +22,7 @@ export default function RecentWorkouts() {
                 </TouchableOpacity>
             </View>
             <View style={{gap: 25, marginBottom: 20}}>
-               {mockWorkouts.slice(-3).map((workout) => (
+               {workouts.slice(-3).map((workout) => (
                 <SingleWorkout key={workout.id} workout={workout} />
                ))}
             </View>
