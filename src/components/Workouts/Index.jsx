@@ -5,8 +5,16 @@ import Title from '@/components/Common/Title';
 import Search from '@/components/Workouts/Search';
 import TotalWorkouts from '@/components/Workouts/TotalWorkouts';
 import SingleWorkout from '@/components/Common/SingleWorkout';
-import mockWorkouts from '@/services/workouts';
+import { getWorkouts } from '@/services/workouts';
+import { useState, useEffect } from 'react';
 export default function Index() {
+
+    const [workouts, setWorkouts] = useState([]);
+    useEffect(() => {
+        getWorkouts().then((data) => {
+            setWorkouts(data);
+        });
+    }, []);
 
     const handleSearch = (text) => {
         console.log(text);
@@ -25,8 +33,8 @@ export default function Index() {
             <View style={commonStyles.mainContainer}>
                 <Title title="My Workouts" />
                 <Search onChangeText={handleSearch} />
-                <TotalWorkouts workouts={mockWorkouts} />
-                {mockWorkouts.map((workout) => (
+                <TotalWorkouts workouts={workouts} />
+                {workouts.map((workout) => (
                     <SingleWorkout showDelete={true} key={workout.id} workout={workout} handleEditWorkout={handleEditWorkout} handleDeleteWorkout={handleDeleteWorkout} />
                 ))}
             </View>
