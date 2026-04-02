@@ -4,7 +4,7 @@ A modern **React Native** fitness tracking app built with **Expo**, featuring an
 
 ---
 
-## 📱 Screenshots
+<!-- ## 📱 Screenshots
 
 <p align="center">
   <img src="assets/preview/4FC779F3-A18E-4F8F-98A6-3DA6E1A3E168_1_105_c.jpeg" width="18%" />
@@ -13,7 +13,7 @@ A modern **React Native** fitness tracking app built with **Expo**, featuring an
   <img src="assets/preview/7238A1EE-2277-4353-AADD-FE09E1F60A49_1_105_c.jpeg" width="18%" />
   <img src="assets/preview/7B93123E-CAAC-43BD-9959-42E1FE790F75_1_105_c.jpeg" width="18%" />
   <img src="assets/preview/F4638E6B-3852-4896-B570-0F5E92516869_1_105_c.jpeg" width="18%" />
-</p>
+</p> -->
 
 ---
 
